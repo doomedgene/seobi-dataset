@@ -20,6 +20,20 @@ Additional documentation files are provided in the `docs/` directory.
 - `docs/SCHEMA.md`: field descriptions for the released data tables
 
 Additional rule documentation and usage examples may be added in later updates.
+## Repository structure
+
+```text
+seobi-dataset/
+├── README.md
+├── LICENSE
+├── data/
+│   ├── sentences.csv
+│   ├── sentence_themes.csv
+│   ├── entity_mentions.csv
+│   └── entity_linkage.csv
+├── docs/
+│   └── SCHEMA.md
+└── examples/
 
 ## Notes
 
