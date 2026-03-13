@@ -17,9 +17,16 @@ Additional documentation files are provided in the `docs/` directory.
 
 ## Documentation
 
-- `docs/SCHEMA.md`: field descriptions for the released data tables
+The repository currently includes the following documentation files:
 
-Additional rule documentation and usage examples may be added in later updates.
+- `docs/SCHEMA.md`: field descriptions for the released data tables
+- `docs/keyword_rules.md`: summary of the thematic trigger rules used in the released thematic annotations
+- `docs/entity_rules.md`: summary of the rule-based entity annotation procedures
+- `docs/undeciphered_support_rules.md`: summary of the conservative support procedure for partially deciphered sentences
+
+## Usage example
+
+- `examples/read_seobi.py`: minimal example showing how to load the released data tables and retrieve thematic annotations and entity mentions for a sample sentence
 ## Repository structure
 
 ```text
