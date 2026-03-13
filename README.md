@@ -50,8 +50,8 @@ seobi-dataset/
 
 ## License
 
-License information will be added in the repository `LICENSE` file.
+This repository is released under the license specified in the `LICENSE` file.
 
 ## Citation
 
-Citation information will be added after the formal data release is finalized.
+Citation information for the released dataset will be added after the formal repository release is finalized and a persistent identifier becomes available.
