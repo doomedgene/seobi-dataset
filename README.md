@@ -1,57 +1,50 @@
-# seobi-dataset
-SEOBI: A sentence-level semantically annotated dataset for oracle bone inscriptions.
 # SEOBI
 
-SEOBI (Semantically Enriched Oracle Bone Inscription Dataset) is a sentence-level semantically annotated dataset for oracle bone inscriptions. The current release provides curated inscription sentences together with thematic annotations, entity mentions, and canonical linkage records.
+SEOBI (Semantically Enriched Oracle Bone Inscription Dataset) is a sentence-level semantic annotation dataset for oracle bone inscriptions, built upon the [OBIMD](https://huggingface.co/datasets/Redstone-OBI/OBIMD) corpus.
 
-## Repository contents
+This dataset accompanies the paper:
 
-The current repository includes the following core data files:
+> **A sentence-level semantic annotation dataset for oracle bone inscriptions**
+> *Scientific Data* (under review)
 
-- `data/sentences.csv`: master sentence table of curated inscription sentences
-- `data/sentence_themes.csv`: sentence-level thematic annotations in long format
-- `data/entity_mentions.csv`: unified entity mention table
-- `data/entity_linkage.csv`: unique canonical-level linkage relations between entities
-
-Additional documentation files are provided in the `docs/` directory.
-
-## Documentation
-
-The repository currently includes the following documentation files:
-
-- `docs/SCHEMA.md`: field descriptions for the released data tables
-- `docs/keyword_rules.md`: summary of the thematic trigger rules used in the released thematic annotations
-- `docs/entity_rules.md`: summary of the rule-based entity annotation procedures
-- `docs/undeciphered_support_rules.md`: summary of the conservative support procedure for partially deciphered sentences
-
-## Usage example
-
-- `examples/read_seobi.py`: minimal example showing how to load the released data tables and retrieve thematic annotations and entity mentions for a sample sentence
 ## Repository structure
 
-```text
+```
 seobi-dataset/
 ├── README.md
+├── SCHEMA.md
 ├── LICENSE
 ├── data/
-│   ├── sentences.csv
-│   ├── sentence_themes.csv
-│   ├── entity_mentions.csv
-│   └── entity_linkage.csv
+│   ├── sentences.csv          (17,150 rows)
+│   ├── sentence_themes.csv    (6,407 rows)
+│   ├── entity_mentions.csv    (6,260 rows)
+│   └── entity_linkage.csv     (2 rows)
 ├── docs/
-│   └── SCHEMA.md
+│   ├── thematic_trigger_lexicon.csv  (90 entries)
+│   ├── keyword_rules.md
+│   ├── entity_rules.md
+│   └── undeciphered_support_rules.md
 └── examples/
+    └── read_seobi.py
+```
 
-## Notes
+## Data files
 
-- All CSV files are encoded in UTF-8.
-- Some rare glyphs or placeholder symbols may not render correctly in spreadsheet software or under fonts without full CJK extension support.
-- Sentence-level records are linked across files through shared record fields and composite sentence keys based on the source record and sentence position.
+- **`sentences.csv`**: Master sentence table of curated InscriptionSentence records.
+- **`sentence_themes.csv`**: Sentence-level thematic annotations (positive-only long format) across five categories: ritual, rain, agriculture, war, and spatial.
+- **`entity_mentions.csv`**: Mention-level entity annotations with a three-tier schema (entity_phase, entity_type, entity_subtype) and confidence scoring.
+- **`entity_linkage.csv`**: Canonical-level cross-phase linkage relations.
+
+Field definitions for all CSV files are provided in `SCHEMA.md`.
+
+## Cross-file linking
+
+Records are linked across files through the composite key (`bone_id`, `group_order`), which uniquely identifies each sentence. All CSV files use UTF-8 encoding.
 
 ## License
 
-This repository is released under the license specified in the `LICENSE` file.
+[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## Citation
 
-Citation information for the released dataset will be added after the formal repository release is finalized and a persistent identifier becomes available.
+Citation information will be added after the dataset is formally deposited and a persistent identifier becomes available.
