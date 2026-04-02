@@ -47,4 +47,9 @@ Records are linked across files through the composite key (`bone_id`, `group_ord
 
 ## Citation
 
-Citation information will be added after the dataset is formally deposited and a persistent identifier becomes available.
+## Citation
+
+If you use this dataset, please cite:
+
+[作者]. SEOBI: A sentence-level semantically annotated dataset for 
+oracle bone inscriptions. Zenodo https://doi.org/10.5281/zenodo.19382489 (2026).
